@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Route, Switch, withRouter} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, withRouter} from 'react-router-dom';
 import Intro from '../components/intro';
 import SideMenu from '../components/sideMenu';
 import View from '../components/view';
@@ -61,9 +61,9 @@ const Layout = (props) => {
 const App = withRouter(Layout);
 
 const AppRouter = () => (
-  <HashRouter>
+  <BrowserRouter>
   	<App />
-  </HashRouter>
+  </BrowserRouter>
 );
 
 export default AppRouter;
