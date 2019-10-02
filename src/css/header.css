@@ -1,0 +1,22 @@
+#header_container {
+	height: 70px;
+	width: 85vw;
+	padding-right: 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+}
+
+#header_container span {
+	font-size: 24px;
+	font-family: var(--custom-font);
+}
+
+#header_balance_container {
+	height: 100%;
+	width: 20%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}

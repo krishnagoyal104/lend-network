@@ -1,0 +1,25 @@
+#dashboard_container {
+	height: 100%;
+	width: 100%;
+}
+
+#dashboard_switch_container {
+	height: 200px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#dashboard_table_container {
+	height: calc(100% - 200px);
+	width: 100%;
+	padding-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#dashboard_button {
+	margin-bottom: 25px;
+}

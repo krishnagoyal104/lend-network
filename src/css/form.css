@@ -1,0 +1,23 @@
+#form {
+	height: 100%;
+	width: 100%;
+}
+
+#form_container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #F7F9FB;
+}
+
+#form_container_left {
+	height: 100%;
+	width: 20%;
+}
+
+#form_container_right {
+	max-height: 100%;
+	width: 80%;
+	overflow-y: auto;
+}

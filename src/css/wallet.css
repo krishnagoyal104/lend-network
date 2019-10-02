@@ -1,0 +1,82 @@
+#wallet {
+	height: 100%;
+	width: 100%;
+}
+
+#wallet_container {
+	height: 60%;
+	width: 100%;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#wallet_container span {
+	font-family: var(--custom-font);
+	font-size: 24px;
+}
+
+#wallet_header {
+	width: 60%;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.balance_container {
+	height: 100px;
+	width: 60%;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+.balance_container:hover {
+	box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+}
+
+.balance_left_container {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.balance_right_container {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.balance_sub_container {
+	width: 25%;
+}
+
+.balance_amount {
+	font-weight: bold;
+	color: #007ee5;
+}
+
+#wallet_address_container {
+	height: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#wallet_address_container span {
+	font-size: 24px;
+	font-family: var(--custom-font);
+}
+
+#wallet_address {
+	margin-left: 10px;
+	color: #007ee5;
+}

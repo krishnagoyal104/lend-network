@@ -1,0 +1,20 @@
+#button {
+	height: 45px;
+	width: 150px;
+	border-width: 0px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #007ee5;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#button:hover {
+	cursor: pointer;
+	background-color: var(--custom-color);
+}
+
+#button_text {
+	color: white;
+}

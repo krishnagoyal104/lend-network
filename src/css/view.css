@@ -1,0 +1,25 @@
+#view {
+	height: 100%;
+	width: 100%;
+}
+
+#view_container {
+	max-height: 100%;
+	width: 100%;
+	padding: 50px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	overflow-y: auto;
+}
+
+.view_header {
+	width: 100%;
+	padding-left: 25px;
+	padding-top: 10px;
+}
+
+.view_header_text {
+	font-size: 26px;
+	font-family: var(--custom-font);
+}
