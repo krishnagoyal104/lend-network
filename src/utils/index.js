@@ -25,7 +25,6 @@ export const getNetwork = () => {
 	const promise = new Promise(async(resolve, reject) => {
 		try{
 			const network = await web3.eth.net.getNetworkType();
-			console.log(network);
 			if(network === 'rinkeby'){
 				resolve();
 			}

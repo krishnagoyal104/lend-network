@@ -272,7 +272,7 @@ class Timeline extends React.Component {
             }
             {
               !hasBalance &&
-              <p id="steps_info">You dont't have enough dai. You can request some from the <span class="steps_link" onClick={this.props.navigate}>faucet</span>.</p>
+              <p id="steps_info">You dont't have enough dai. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>
             }
           </div>
         </VerticalTimelineElement>}

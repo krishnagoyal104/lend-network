@@ -12,7 +12,6 @@ export const fetchTicker = (publicKey) => {
   return async(dispatch) => {
     try{
       const result = await getEthPrice();
-      console.log(result);
       dispatch(setTicker(result));
     }
     catch(e){

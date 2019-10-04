@@ -10,9 +10,9 @@ const columns = (address) => {
     dataIndex: 'name',
     key: 'name',
     render: text =>
-      <div class="table_name_container">
+      <div className="table_name_container">
         <Jazzicon diameter={40} seed={jsNumberForAddress(address)} />
-        <span class="table_name">Eth/Dai</span>
+        <span className="table_name">Eth/Dai</span>
       </div>,
     width: 200  
   },
@@ -79,7 +79,7 @@ const columns = (address) => {
 
 const TableView = (props) => {
   return(
-    <Table columns={columns(props.account)} dataSource={props.data}
+    <Table columns={columns(props.account)} dataSource={props.data} rowKey={record => record._id}
     onRow={(record, index) => {
     return {
       onClick: event => props.openModal(index)

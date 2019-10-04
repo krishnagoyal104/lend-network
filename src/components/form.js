@@ -59,13 +59,13 @@ class Form extends React.Component {
 	render(){
 		return(
 			<div id="form">
-				<div class="view_header">
+				<div className="view_header">
 					{
 						this.props.mode ?
-						<span class="view_header_text">
+						<span className="view_header_text">
 							Create a new request to borrow Ethereum.
 						</span> :
-						<span class="view_header_text">Create a new offer to lend Ethereum.</span>
+						<span className="view_header_text">Create a new offer to lend Ethereum.</span>
 					}
 				</div>
 				<div id="form_container">

@@ -16,7 +16,7 @@ const Hook = (Component) => {
 				case '/dashboard/offers':
 					return query_user_offers;
 				case '/dashboard/requests':
-					return query_user_requests;	
+					return query_user_requests;
 			}
 		};
 

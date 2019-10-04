@@ -34,7 +34,7 @@ class Faucet extends React.Component {
 					<p>Dai</p>
 					<div id="faucet_balance_container">
 						<p>Balance:</p>
-						<p id="faucet_balance">{this.props.loading ? <Loader size={30} /> : round(fromWei(this.props.balance.dai), 2)}</p>
+						{this.props.loading ? <Loader size={30} /> : <p id="faucet_balance">{round(fromWei(this.props.balance.dai), 2)}</p>}
 					</div>
 					<div id="faucet_button_container">
 						<p>Get 1000 Dai</p>

@@ -26,7 +26,7 @@ const renderHeader = (path) => {
 		case '/wallet':
 			return 'Wallet';
 		case '/faucet':
-			return 'Faucet';				
+			return 'Faucet';			
 	}
 }
 
@@ -43,6 +43,7 @@ const Layout = (props) => {
 					<div id="sub_container">
 						<Modal />
 						<Switch>
+							<Route path="/" component={Intro} exact={true} />
 				      <Route path="/offers" component={View} />
 				      <Route path="/requests" render={(props) => <View mode={true} {...props} />} />
 				      <Route path="/create_request" render={() => <Form mode={true} key={"request"} />} />

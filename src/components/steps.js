@@ -79,21 +79,21 @@ class StepsView extends React.Component {
             disabled={this.state.current < index} />
           ))}
         </Steps>
-        <div class="steps-content">
+        <div className="steps-content">
           {this.state.current === 0 &&
-          <div class="steps_container">
-            <div class="steps_header">
+          <div className="steps_container">
+            <div className="steps_header">
               <span>{mode ? 'Request overview' : 'Offer overview'}</span>
             </div>
-            <div class="steps_body">
-              <div class="steps_keys_container">
+            <div className="steps_body">
+              <div className="steps_keys_container">
                 <p>Loan Amount</p>
                 <p>Collateral Amount</p>
                 <p>Installments</p>
                 <p>Duration</p>
                 <p>Interest</p>
               </div>
-              <div class="steps_values_container">
+              <div className="steps_values_container">
                 <p>{loanAmount} Eth</p>
                 <p>{collateralAmount} Dai</p>
                 <p>{installments}</p>
@@ -101,7 +101,7 @@ class StepsView extends React.Component {
                 <p>{interest} %</p>
               </div>
             </div>
-            <div class="steps_button">
+            <div className="steps_button">
               <Button size="large" onClick={this.next}>
                 <Icon type="right-circle" />
                 <span>Next</span>
@@ -109,25 +109,25 @@ class StepsView extends React.Component {
             </div>
           </div>}
           {this.state.current === 1 &&
-          <div class="steps_container">
-            <div class="steps_header">
+          <div className="steps_container">
+            <div className="steps_header">
               <span>{mode ? 'Ether' : 'Collateral'}</span>
             </div>
-            <div class="steps_body">
-              <div class="steps_keys_container">
+            <div className="steps_body">
+              <div className="steps_keys_container">
                 <p>Your balance</p>
                 <p>{mode ? 'Required Ether' : 'Required Colateral'}</p>
                 <p>{!mode && 'Already Approved'}</p>
                 <p>{mode ? (ethRequired > 0 && 'Required') : 'To Approve'}</p>
               </div>
-              <div class="steps_values_container">
+              <div className="steps_values_container">
                 <p>{round(fromWei(mode ? eth : dai), 2)}</p>
                 <p>{mode ? `${loanAmount} Eth` : `${collateralAmount} Dai`}</p>
                 <p>{!mode && `${allowance} Dai`}</p>
                 <p>{mode ? (ethRequired > 0 && `${round(fromWei(ethRequired), 2)} Eth`) : toApprove > 0 ? `${round(fromWei(toApprove), 2)} Dai` : '0'}</p>
               </div>    
             </div>
-            <div class="steps_button">
+            <div className="steps_button">
               {this.props.loading ? <Loader size={30} /> :
               (mode ?
                 <Button size="large" disabled={ethRequired > 0} onClick={this.next}>
@@ -141,16 +141,16 @@ class StepsView extends React.Component {
               }
             </div>
             {!mode && toApprove > 0 && <p id="steps_info">*Approve dai to our contract as collateral to proceed.</p>}
-            {!mode && !hasBalance && <p id="steps_info">You dont't have enough dai. You can request some from the <span class="steps_link" onClick={this.props.navigate}>faucet</span>.</p>}
-            {mode && ethRequired > 0 && <p id="steps_info">Your account does not have sufficient ether. You can request some from the <span class="steps_link" onClick={this.props.navigate}>faucet</span>.</p>}
+            {!mode && !hasBalance && <p id="steps_info">You dont't have enough dai. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>}
+            {mode && ethRequired > 0 && <p id="steps_info">Your account does not have sufficient ether. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>}
           </div>
           }
           {this.state.current === 2 &&
-          <div class="steps_container">
-            <div class="steps_header">
+          <div className="steps_container">
+            <div className="steps_header">
               <span>Accept Offer</span>
             </div>
-            <div class="steps_body">
+            <div className="steps_body">
               {mode ?
                 <ul id="steps_submit_pointers">
                   <li>Your account will immediately be debited with {loanAmount} Eth.</li>
@@ -167,7 +167,7 @@ class StepsView extends React.Component {
                 </ul>
               }
             </div>
-            <div class="steps_button">
+            <div className="steps_button">
               {this.props.loading ? <Loader size={30} /> :
               <Button size="large" onClick={mode ? this.props.acceptRequest : this.props.acceptOffer}>
                 <Icon type="right-circle" />

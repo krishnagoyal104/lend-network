@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Icon, notification} from 'antd';
 import Card from './card';
 import {fetchBalance} from '../actions/balance';
 import Hook from './hook';
@@ -68,19 +67,6 @@ class View extends React.Component {
 		}
 	}
 
-	openNotification = () => {
-    notification.open({
-      message: 'Request Accepted',
-      description: 'A loan has been extended from your account to the borrower.',
-      icon: <Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" />,
-    });
-    notification.open({
-      message: 'Offer Accepted',
-      description: 'Your account has been credited with ethers.',
-      icon: <Icon type="check-circle" theme="twoTone" twoToneColor="#52c41a" />,
-    });
-  };
-
 	navigate = () => {
 		if(this.props.mode){
 			window.open('https://faucet.rinkeby.io/', '_newtab')
@@ -94,13 +80,13 @@ class View extends React.Component {
 
 		return(
 			<div id="view">
-				<div class="view_header">
+				<div className="view_header">
 					{
 						this.props.mode ?
-						<span class="view_header_text">
+						<span className="view_header_text">
 							Lend Ether by selecting one of the requests below.
 						</span> :
-						<span class="view_header_text">Borrow Ether by selecting one of the offers below.</span>
+						<span className="view_header_text">Borrow Ether by selecting one of the offers below.</span>
 					}
 				</div>
 				<div id="view_container">
