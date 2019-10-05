@@ -1,8 +1,6 @@
 import './style.css';
 import './layout.css';
 import './sideMenu.css';
-import './header.css';
-import './home.css';
 import './card.css';
 import './view.css';
 import './form.css';

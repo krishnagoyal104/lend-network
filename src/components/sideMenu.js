@@ -23,7 +23,7 @@ class SideMenu extends React.Component{
 		const {select} = this.state;
 
 		return(
-			<div id="container">
+			<div id="sidemenu">
 				<div id="logo_container">
 					<span id="logo">Ethlend</span>
 				</div>
@@ -36,12 +36,6 @@ class SideMenu extends React.Component{
 					<li className={select === 6 ? 'active_li' : null} onClick={() => this.navigate(6, '/wallet')}>Wallet</li>
 					<li className={select === 7 ? 'active_li' : null} onClick={() => this.navigate(7, '/faucet')}>Faucet</li>
 				</ul>
-				{/*<div id="sidemenu_bottom_container">
-					<div id="sidemenu_ticker_container">
-						<span>Eth price: ${this.props.price}</span>
-						<span>Dai price: $1</span>
-					</div>
-				</div>*/}
 			</div>
 		);
 	}

@@ -24,11 +24,7 @@ const onBeforeLift = async() => {
 }
 
 const App = () => {
-	//const path = window.location.pathname;
 	const promise = new Promise(async(resolve, reject) => {
-		/*if(path === '/'){
-			resolve(<Intro />);
-		}*/
 		if(typeof web3 !== 'undefined'){
 			try{
 				await getNetwork();
