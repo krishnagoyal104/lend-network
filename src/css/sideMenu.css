@@ -9,7 +9,7 @@
 
 #logo_container {
 	height: 70px;
-	width: 100%;
+	min-width: 100%;
 	padding: 25px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 #list {
-	width: 90%;
+	min-width: 90%;
 	padding-top: 40px;
 	display: flex;
 	flex-direction: column;

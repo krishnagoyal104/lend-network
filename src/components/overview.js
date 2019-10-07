@@ -6,29 +6,29 @@ const Overview = (props) => {
 		<div id="overview">
 			<div id="overview_container">
 				<div id="overview_header">
-					<p>Overview</p>
+					<span>Overview</span>
 				</div>
 				<div id="overview_sub_container">
 					<div>
-						<p>Collateral Asset</p>
-						<p className="overview_values">Dai</p>
+						<span>Collateral Asset</span>
+						<span className="overview_values">Dai</span>
 					</div>
 					<div>
-						<p>{props.mode ? 'Loan Amount(Dai)' : 'Collateral Amount(Eth)'}</p>
-						<p className="overview_values">{props.amount}</p>
+						<span>{props.mode ? 'Loan Amount(Dai)' : 'Collateral Amount(Eth)'}</span>
+						<span className="overview_values">{props.amount}</span>
 					</div>
 					<div>
-						<p>Installments</p>
-						<p className="overview_values">{props.duration}</p>
+						<span>Installments</span>
+						<span className="overview_values">{props.duration}</span>
 					</div>
 					<div>
-						<p>Interest(%)</p>
-						<p className="overview_values">{props.interest}</p>
+						<span>Interest(%)</span>
+						<span className="overview_values">{props.interest}</span>
 					</div>
 					{props.mode &&
 					<div>
-						<p>Contract Approval</p>
-						<p className="overview_values">{props.approve && props.approve.toString()}</p>
+						<span>Contract Approval</span>
+						<span className="overview_values">{props.approve && props.approve.toString()}</span>
 					</div>}
 				</div>
 			</div>

@@ -20,23 +20,23 @@
 #overview_header {
 	height: 10%;
 	width: 100%;
-	padding-top: 5%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #007ee5
 }
 
-#overview_header p {
+#overview_header span {
 	font-size: 20px;
 	color: white;
 }
 
 #overview_sub_container {
+	height: 60%;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 #overview_sub_container div {
@@ -44,7 +44,7 @@
 	justify-content: space-between;
 }
 
-#overview_sub_container div p {
+#overview_sub_container div span {
 	font-size: 18px;
 }
 

@@ -1,13 +1,17 @@
 #main_container {
-	height: 100vh;
-	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	padding: 0;
 	display: flex;
-	overflow: hidden;
+	z-index: 1000;
 }
 
 #main_container_left {
 	height: 100%;
-	width: 15%;
+	min-width: 15%;
 }
 
 #main_container_right {
@@ -34,4 +38,28 @@
 #sub_container {
 	height: calc(100% - 80px);
 	width: 100%;
+}
+
+/*@media only screen and (max-width: 1200px) {
+  html {
+    display: none;
+  }
+}*/
+
+@media only screen and (min-width: 720px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  html {
+    font-size: 24px;
+  }
 }
