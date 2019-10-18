@@ -3,31 +3,29 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
 	background-color: var(--custom-color);
 }
 
 #logo_container {
 	height: 70px;
-	min-width: 100%;
-	padding: 25px;
+	width: 100%;
 }
 
 #logo {
-	font-size: 38px;
+	font-size: 1.5rem;
 	font-family: var(--custom-font);
 	color: white;
 }
 
 #list {
+	float: right;
 	min-width: 90%;
-	padding-top: 40px;
 	display: flex;
 	flex-direction: column;
 }
 
 #list li {
-	font-size: 20px;
+	font-size: 0.8rem;
 	padding: 5px;
 	font-family: var(--custom-font);
 	color: white;
@@ -40,4 +38,15 @@
 
 .active_li {
 	background-color: #0A357C;
+}
+
+.list_menu {
+	height: 300px;
+	width: 100%;
+	background-color: var(--custom-color);
+	z-index: 2;
+}
+
+#toggle {
+	background-color: var(--custom-color);
 }

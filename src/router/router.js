@@ -34,11 +34,11 @@ const renderHeader = (path) => {
 const Layout = (props) => {
 	const path = props.location.pathname;
 	return(
-		<div id="main_container">
-			<div id="main_container_left">
+		<div className="flex-column flex-lg-row" id="main_container">
+			<div id="main_container_left" className="h-10 h-lg-100 w-100 w-lg-15">
 				<SideMenu />
 			</div>
-			<div id="main_container_right">
+			<div id="main_container_right" className="h-90 h-lg-100 w-100 w-lg-85">
 				<div id="global_header_container">
 					<span id="global_header_text">{renderHeader(path)}</span>
 				</div>

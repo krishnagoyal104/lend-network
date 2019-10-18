@@ -11,8 +11,19 @@
 	font-family: var(--custom-font);
 }
 
+#faucet_info_container {
+	height: 20%;
+	width: 80%;
+}
+
+#faucet_info {
+	margin-top: 0.3rem;
+	font-size: 1rem;
+	text-align: center;
+}
+
 #faucet_container {
-	height: 60%;
+	height: 80%;
 	width: 30%;
 	display: flex;
 	flex-direction: column;
@@ -21,33 +32,8 @@
 }
 
 #faucet_container p {
-	font-size: 30px;
+	font-size: 1rem;
 	font-family: var(--custom-font);
-}
-
-#faucet_info_container {
-	width: 80%;
-}
-
-#faucet_info {
-	margin-top: 5px;
-	font-size: 24px;
-	text-align: center;
-}
-
-#faucet_header {
-	height: 10%;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #007ee5;
-}
-
-#faucet_header p {
-	padding-top: 25px;
-	font-size: 26px;
-	color: white;
 }
 
 #faucet_sub_container {
@@ -58,36 +44,14 @@
 	align-items: center;
 }
 
-#faucet_sub_container_top {
-	height: 80%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
-}
-
-#faucet_sub_container_top p {
-	font-size: 22px;
-}
-
-#faucet_row {
-	height: 20%;
-	width: 100%;
-	padding-left: 10px;
-	padding-right: 10px;
-	display: flex;
-	justify-content: space-between;
-}
-
 #faucet_balance_container {
 	display: flex;
 	align-items: center;
 }
 
-#faucet_balance_container p {
-	font-size: 30px;
-	padding-right: 20px;
+#faucet_balance_container span {
+	font-size: 1rem;
+	padding-right: 0.5rem;
 }
 
 #faucet_balance {
@@ -95,7 +59,7 @@
 }
 
 #faucet_account_address {
-	font-size: 20px;
+	font-size: 1rem;
 }
 
 #faucet_button_container {
@@ -108,7 +72,7 @@
 }
 
 #faucet_button_container p {
-	font-size: 28px;
+	font-size: 1rem;
 }
 
 #faucet_image {

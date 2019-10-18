@@ -1,6 +1,4 @@
 #button {
-	height: 45px;
-	width: 150px;
 	border-width: 0px;
 	border-radius: 8px;
 	display: flex;
@@ -12,9 +10,10 @@
 
 #button:hover {
 	cursor: pointer;
-	background-color: var(--custom-color);
+	opacity: 0.8;
 }
 
 #button_text {
+	font-size: 0.8rem;
 	color: white;
 }

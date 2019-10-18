@@ -56,7 +56,7 @@ class Wallet extends React.Component {
 						<span>${this.props.price}</span>
 					</div>
 					<div className="balance_sub_container">	
-						<Button name={"Get Ether"} handler={() => window.open('https://faucet.rinkeby.io/', '_newtab')} />
+						<Button height={'2rem'} width={'5.5rem'} name={"Get Ether"} handler={() => window.open('https://faucet.rinkeby.io/', '_newtab')} />
 					</div>
 				</div>
 				<div className="balance_container">
@@ -70,7 +70,7 @@ class Wallet extends React.Component {
 						<span>$1</span>
 					</div>
 					<div className="balance_sub_container">	
-						<Button name={"Get Dai"} handler={() => this.props.history.push('/faucet')} />
+						<Button height={'2rem'} width={'5.5rem'} name={"Get Dai"} handler={() => this.props.history.push('/faucet')} />
 					</div>
 				</div>
 				<div className="balance_container">

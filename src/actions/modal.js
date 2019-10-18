@@ -1,6 +1,7 @@
-export const openModal = () => {
+export const openModal = (path) => {
   return {
-    type: 'OPEN_MODAL'
+    type: 'OPEN_MODAL',
+    path
   };
 };
 

@@ -11,8 +11,8 @@
 }
 
 #overview_container {
-	height: 50%;
-	width: 80%;
+	height: 300px;
+	width: 240px;
 	background-color: white;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 }
@@ -32,7 +32,7 @@
 }
 
 #overview_sub_container {
-	height: 60%;
+	height: 70%;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;

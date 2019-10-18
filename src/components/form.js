@@ -69,7 +69,7 @@ class Form extends React.Component {
 					}
 				</div>
 				<div id="form_container">
-					<div id="form_container_left">
+					<div className="d-none d-lg-block" id="form_container_left">
 						<Overview {...this.state} mode={this.props.mode} />
 					</div>
 					<div id="form_container_right">

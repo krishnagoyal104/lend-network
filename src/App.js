@@ -5,7 +5,6 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import {client} from './graphql/config';
 import AppRouter from './router/router';
 import configureStore from './store/configureStore.js';
-import Intro from './components/intro';
 import Metamask from './components/metamask';
 import {getAccounts, enableMetamask, getNetwork} from './utils';
 import {setAccount} from './actions/account';

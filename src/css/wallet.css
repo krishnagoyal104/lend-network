@@ -14,8 +14,8 @@
 }
 
 #wallet_container span {
+	font-size: 1rem;
 	font-family: var(--custom-font);
-	font-size: 24px;
 }
 
 #wallet_header {
@@ -72,11 +72,11 @@
 }
 
 #wallet_address_container span {
-	font-size: 2vw;
+	font-size: 1rem;
 	font-family: var(--custom-font);
 }
 
 #wallet_address {
-	margin-left: 10px;
+	margin-left: 1rem;
 	color: #007ee5;
 }

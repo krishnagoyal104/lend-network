@@ -25,7 +25,7 @@ const Hook = (Component) => {
 			notifyOnNetworkStatusChange: true
 		});
 
-		if (loading) return <Loader />;
+		if (loading) return <Loader height={true} />;
   	if (error) return <ErrorView />;
 
   	const {pathname} = props.location;	

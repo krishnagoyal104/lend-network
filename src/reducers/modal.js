@@ -1,11 +1,20 @@
-const initialState = false;
+const initialState = {
+	isOpen: false,
+	path: ''
+};
 
 export default(state = initialState, action) => {
   switch (action.type) {
     case 'OPEN_MODAL':
-      return true;
+      return {
+      	isOpen: true,
+      	path: action.path
+      };
     case 'CLOSE_MODAL':
-    	return false;           
+    	return {
+    		isOpen: false,
+    		path: ''
+    	};           
     default:
       return state;  
   };

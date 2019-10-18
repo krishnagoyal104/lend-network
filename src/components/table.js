@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Divider, Tag } from 'antd';
+import { Table, Tag } from 'antd';
 import Jazzicon, {jsNumberForAddress} from 'react-jazzicon';
 import {round, fromWei} from '../utils';
 

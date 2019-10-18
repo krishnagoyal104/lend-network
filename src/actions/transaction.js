@@ -31,7 +31,7 @@ export const createRequest = (args) => {
 			const account = getState().account;
 			await createLoanRequest(account, args);
 			dispatch(stopLoading());
-			dispatch(openModal());
+			dispatch(openModal('/requests'));
 			return Promise.resolve();
 		}
 		catch(e){
@@ -50,7 +50,7 @@ export const createOffer = (args) => {
 			const account = getState().account;
 			await createLoanOffer(account, args);
 			dispatch(stopLoading());
-			dispatch(openModal());
+			dispatch(openModal('/offers'));
 			return Promise.resolve();
 		}
 		catch(e){
@@ -69,7 +69,7 @@ export const acceptRequest = (id, amount) => {
 			const account = getState().account;
 			await acceptLoanRequest(account, id, amount);
 			dispatch(stopLoading());
-			dispatch(openModal());
+			dispatch(openModal('/offers'));
 			return Promise.resolve();
 		}
 		catch(e){
@@ -89,7 +89,7 @@ export const acceptOffer = (id, amount) => {
 			const account = getState().account;
 			await acceptLoanOffer(account, id);
 			dispatch(stopLoading());
-			dispatch(openModal());
+			dispatch(openModal('/requests'));
 			return Promise.resolve();
 		}
 		catch(e){

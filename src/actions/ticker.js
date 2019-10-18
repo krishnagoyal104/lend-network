@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {getEthPrice} from '../utils';
 
 export const setTicker = (ticker) => {

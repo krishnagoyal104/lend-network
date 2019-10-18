@@ -30,15 +30,15 @@ class Faucet extends React.Component {
 					</p>
 				</div>
 				<div id="faucet_container">
-					<img id="faucet_image" src={require('../images/dai.svg')} />
+					<img id="faucet_image" src={require('../images/dai.svg')} alt="" />
 					<p>Dai</p>
 					<div id="faucet_balance_container">
-						<p>Balance:</p>
-						{this.props.loading ? <Loader size={30} /> : <p id="faucet_balance">{round(fromWei(this.props.balance.dai), 2)}</p>}
+						<span>Balance:</span>
+						{this.props.loading ? <Loader size={30} /> : <span id="faucet_balance">{round(fromWei(this.props.balance.dai), 2)}</span>}
 					</div>
 					<div id="faucet_button_container">
 						<p>Get 1000 Dai</p>
-						<Button name={'Request Dai'} height={'60px'} width={'250px'} handler={this.getDaiTokens} />
+						<Button name={'Request Dai'} height={'2.5rem'} width={'8rem'} handler={this.getDaiTokens} />
 					</div>
 				</div>
 			</div>

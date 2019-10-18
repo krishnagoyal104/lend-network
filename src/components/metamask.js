@@ -4,7 +4,7 @@ const Metamask = (props) => {
 
 	return(
 		<div id="metamask_container">
-			<div id="metamask_sub_container">
+			<div className="col-md-6 col-lg-4" id="metamask_sub_container">
 				<p id="metamask_header">Oops! Something went wrong.</p>
 				<img id="metamask_icon" src={require('../images/metamask.png')} />
 				<p id="metamask_description">

@@ -15,6 +15,9 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)',
     boxShadow             : '0 8px 12px 0 rgba(0,0,0,0.2)'
+  },
+  overlay: {
+    zIndex: 2
   }
 };
 
@@ -25,6 +28,7 @@ const ModalView = (props) => {
       isOpen={props.isOpen}
       onRequestClose={props.closeModal}
       style={customStyles}
+      ariaHideApp={false}
       contentLabel="Loan"
     >
 			<Steps {...props} />

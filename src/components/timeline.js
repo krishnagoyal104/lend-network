@@ -263,6 +263,7 @@ class Timeline extends React.Component {
               </div>
             }
             {this.props.approve ? <img id="check_mark_image" src={require('../images/check-mark.svg')} /> :
+              this.props.loading ? <Loader /> :
               <Button className="timeline_event_button" disabled={!hasBalance} size="large" onClick={() => {
                 toApprove > 0 ? this.props.approveTokens(this.onChangeDisplay) : this.onChangeDisplay(5);
               }}>
@@ -302,9 +303,9 @@ class Timeline extends React.Component {
             </div>
             {this.props.loading ? <Loader /> :
               <Button className="timeline_event_button" size="large" onClick={() => this.props.submit(this.props.mode ? 'request' : '')}>
-              <Icon className="timeline_event_icon" type="right-circle" />
-              <span>Submit</span>
-            </Button>}
+                <Icon className="timeline_event_icon" type="right-circle" />
+                <span>Submit</span>
+              </Button>}
           </div>
         </VerticalTimelineElement>}
       </VerticalTimeline>

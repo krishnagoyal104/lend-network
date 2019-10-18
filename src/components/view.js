@@ -17,6 +17,10 @@ class View extends React.Component {
 	}
 
 	componentDidMount(){
+		this.fetchBalance();
+	}
+
+	fetchBalance = () => {
 		this.props.dispatch(fetchBalance());
 	}
 
@@ -36,6 +40,7 @@ class View extends React.Component {
 	approve = async(amount, _next) => {
 		try{
 			await this.props.dispatch(approve(amount));
+			this.fetchBalance();
 			_next();
 		}
 		catch(e){

@@ -521,6 +521,11 @@ module.exports = function(webpackEnv) {
             : undefined
         )
       ),
+      new webpack.ProvidePlugin({   
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery'
+      }),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       isEnvProduction &&

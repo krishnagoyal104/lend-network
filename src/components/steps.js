@@ -101,8 +101,8 @@ class StepsView extends React.Component {
                 <p>{interest} %</p>
               </div>
             </div>
-            <div className="steps_button">
-              <Button size="large" onClick={this.next}>
+            <div className="steps_button_container">
+              <Button className="steps_button" size="large" onClick={this.next}>
                 <Icon type="right-circle" />
                 <span>Next</span>
               </Button>
@@ -127,14 +127,14 @@ class StepsView extends React.Component {
                 <p>{mode ? (ethRequired > 0 && `${round(fromWei(ethRequired), 2)} Eth`) : toApprove > 0 ? `${round(fromWei(toApprove), 2)} Dai` : '0'}</p>
               </div>    
             </div>
-            <div className="steps_button">
+            <div className="steps_button_container">
               {this.props.loading ? <Loader size={30} /> :
               (mode ?
-                <Button size="large" disabled={ethRequired > 0} onClick={this.next}>
+                <Button className="steps_button" size="large" disabled={ethRequired > 0} onClick={this.next}>
                   <Icon type="right-circle" />
                   <span>Next</span>
                 </Button> :
-                <Button size="large" disabled={!hasBalance} onClick={() => toApprove > 0 ? this.props.approve(_amount, this.next) : this.next()}>
+                <Button className="steps_button" size="large" disabled={!hasBalance} onClick={() => toApprove > 0 ? this.props.approve(_amount, this.next) : this.next()}>
                   <Icon type="right-circle" />
                   <span>{toApprove > 0 ? 'Approve' : 'Next'}</span>
                 </Button>)
@@ -167,9 +167,9 @@ class StepsView extends React.Component {
                 </ul>
               }
             </div>
-            <div className="steps_button">
+            <div className="steps_button_container">
               {this.props.loading ? <Loader size={30} /> :
-              <Button size="large" onClick={mode ? this.props.acceptRequest : this.props.acceptOffer}>
+              <Button className="steps_button" size="large" onClick={mode ? this.props.acceptRequest : this.props.acceptOffer}>
                 <Icon type="right-circle" />
                 <span>Accept</span>
               </Button>}
