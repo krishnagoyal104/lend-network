@@ -38,7 +38,8 @@ class SideMenu extends React.Component{
 		return(
 			<div id="sidemenu">
 				<div className="navbar-dark d-flex justify-content-between justify-content-lg-center align-items-center px-4 px-lg-0" id="logo_container">
-					<span id="logo">Ethlend</span>
+					<img id="logo" src={require('../images/logo.png')} />
+					<span id="name">Lend Network</span>
 					<button className="d-lg-none" id="toggle" type="button" data-toggle="collapse" data-target="#menu">
             <span className="navbar-toggler-icon"></span>
           </button>

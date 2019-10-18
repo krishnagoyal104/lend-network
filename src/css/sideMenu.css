@@ -7,12 +7,20 @@
 }
 
 #logo_container {
-	height: 70px;
+	height: 3.5rem;
 	width: 100%;
+	background-color: #0A357C;
 }
 
 #logo {
-	font-size: 1.5rem;
+	height: 50px;
+	width: 50px;
+	object-fit: contain;
+}
+
+#name {
+	padding-left: 10px;
+	font-size: 1.2rem;
 	font-family: var(--custom-font);
 	color: white;
 }
