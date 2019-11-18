@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch, withRouter} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, withRouter, Redirect} from 'react-router-dom';
 import SideMenu from '../components/sideMenu';
 import View from '../components/view';
 import Form from '../components/form';
@@ -45,6 +45,7 @@ const Layout = (props) => {
 				<div id="sub_container">
 					<Modal />
 					<Switch>
+						<Redirect from="/" to="/offers" exact />
 			      <Route path="/offers" component={View} />
 			      <Route path="/requests" render={(props) => <View mode={true} {...props} />} />
 			      <Route path="/create_request" render={() => <Form mode={true} key={"request"} />} />
