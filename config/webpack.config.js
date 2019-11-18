@@ -34,6 +34,7 @@ const appPackageJson = require(paths.appPackageJson);
 /* custom imports */
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -500,6 +501,13 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
+
+      /*-- Custom Plugins --*/
+
+      new MomentLocalesPlugin(),
+
+      /*-- --*/
+      
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
@@ -526,11 +534,6 @@ module.exports = function(webpackEnv) {
             : undefined
         )
       ),
-      new webpack.ProvidePlugin({   
-        jQuery: 'jquery',
-        $: 'jquery',
-        jquery: 'jquery'
-      }),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       isEnvProduction &&

@@ -116,7 +116,6 @@ class Dashboard extends React.Component {
 const mapStateToProps = (state) => {
   return{
     loading: state.loading,
-    requests: state.requests,
     account: state.account
   };
 };
