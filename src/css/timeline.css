@@ -6,14 +6,6 @@
 	justify-content: space-between;
 }
 
-.timeline_event_container p {
-	font-family: var(--custom-font);
-}
-
-.timeline_event_container span {
-	font-family: var(--custom-font);
-}
-
 #timeline_event_title {
 	font-size: 26px;
 }
@@ -160,7 +152,6 @@
 #duration_sub_container span {
 	font-size: 1.2vw;
 	font-weight: bold;
-	font-family: var(--custom-font);
 }
 
 #duration_sub_container :hover {
@@ -180,7 +171,6 @@
 
 #timeline_submit_pointers li {
 	font-size: 20px;
-	font-family: var(--custom-font);
 }
 
 #timeline_approve_container {

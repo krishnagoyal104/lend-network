@@ -6,10 +6,6 @@
 	align-items: center;
 }
 
-#overview p {
-	font-family: var(--custom-font);
-}
-
 #overview_container {
 	height: 300px;
 	width: 240px;

@@ -12,7 +12,6 @@ table tr:hover {
 
 table td {
 	font-size: 1rem;
-	font-family: var(--custom-font);
 }
 
 #table_tag {

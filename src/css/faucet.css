@@ -7,10 +7,6 @@
 	align-items: center;
 }
 
-#faucet p {
-	font-family: var(--custom-font);
-}
-
 #faucet_info_container {
 	height: 20%;
 	width: 80%;
@@ -33,7 +29,6 @@
 
 #faucet_container p {
 	font-size: 1rem;
-	font-family: var(--custom-font);
 }
 
 #faucet_sub_container {

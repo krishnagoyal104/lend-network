@@ -13,7 +13,6 @@
 #card span {
 	font-size: 18px;
 	font-weight: bold;
-	font-family: var(--custom-font);
 }
 
 #card:hover {

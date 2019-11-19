@@ -32,16 +32,19 @@ class SideMenu extends React.Component{
 
 		return(
 			<div id="sidemenu">
-				<div className="navbar-dark d-flex justify-content-between justify-content-lg-center align-items-center px-4 px-lg-0" id="logo_container">
+				<div className="navbar-dark d-flex justify-content-between justify-content-lg-center align-items-center px-4 px-lg-0 h-custom-100" id="logo_container">
 					<img id="logo" src={require('../images/logo.png')} />
 					<span id="name">Lend Network</span>
-					<button onClick={this.toggle} className="d-lg-none" id="toggle" type="button" data-toggle="collapse" data-target="#menu">
+					<button onClick={this.toggle} id="toggle" className="d-lg-none" aria-controls="collapsible"
+					aria-expanded={this.state.menu}>
             <span className="navbar-toggler-icon"></span>
           </button>
 				</div>
 				<div className="d-none d-lg-block pt-3">{list}</div>
-				<Collapse in={this.state.menu} className="list_menu" id="menu" onClick={this.toggle}>
-					{list}
+				<Collapse in={this.state.menu} className="d-lg-none" onClick={this.toggle}>
+					<div id="collapsible" className="list_menu">
+						{list}
+					</div>
 				</Collapse>	
 			</div>
 		);

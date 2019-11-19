@@ -21,7 +21,6 @@
 #name {
 	padding-left: 10px;
 	font-size: 1.2rem;
-	font-family: var(--custom-font);
 	color: white;
 }
 
@@ -34,7 +33,6 @@
 
 #list li {
 	font-size: 0.8rem;
-	font-family: var(--custom-font);
 	color: white;
 }
 
@@ -57,7 +55,6 @@
 }
 
 .list_menu {
-	height: 300px;
 	width: 100%;
 	background-color: var(--custom-color);
 	z-index: 2;
