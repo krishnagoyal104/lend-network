@@ -34,7 +34,6 @@
 
 #list li {
 	font-size: 0.8rem;
-	padding: 5px;
 	font-family: var(--custom-font);
 	color: white;
 }
@@ -44,7 +43,16 @@
 	background-color: #0A357C;
 }
 
-.active_li {
+#list li * {
+	text-decoration: none;
+	color: white;
+}
+
+#list li div {
+	padding: 5px;
+}
+
+.active_li div {
 	background-color: #0A357C;
 }
 

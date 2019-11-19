@@ -1,6 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Collapse from 'react-bootstrap/Collapse'
 
 class SideMenu extends React.Component{
@@ -8,16 +7,8 @@ class SideMenu extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			select: null,
 			menu: false
 		}
-	}
-	
-	navigate = (val, path) => {
-		this.setState(({
-			select: val
-		}));
-		this.props.history.push(path);
 	}
 
 	toggle = () => {
@@ -28,17 +19,15 @@ class SideMenu extends React.Component{
 
 	render(){
 
-		const {select} = this.state;
-
 		const list =
-		<ul id="list" onClick={this.toggle}>
-			<li className={select === 1 ? 'active_li' : null} onClick={() => this.navigate(1, '/offers')}>All offers</li>
-			<li className={select === 2 ? 'active_li' : null} onClick={() => this.navigate(2, '/requests')}>All requests</li>
-			<li className={select === 3 ? 'active_li' : null} onClick={() => this.navigate(3, '/create_offer')}>New lend offer</li>
-			<li className={select === 4 ? 'active_li' : null} onClick={() => this.navigate(4, '/create_request')}>New borrow request</li>
-			<li className={select === 5 ? 'active_li' : null} onClick={() => this.navigate(5, '/dashboard/offers')}>Dashboard</li>
-			<li className={select === 6 ? 'active_li' : null} onClick={() => this.navigate(6, '/wallet')}>Wallet</li>
-			<li className={select === 7 ? 'active_li' : null} onClick={() => this.navigate(7, '/faucet')}>Faucet</li>
+		<ul id="list">
+			<li><NavLink to="/offers" activeClassName="active_li"><div>All offers</div></NavLink></li>
+			<li><NavLink to="/requests" activeClassName="active_li"><div>All requests</div></NavLink></li>
+			<li><NavLink to="/create_offer" activeClassName="active_li"><div>New lend offer</div></NavLink></li>
+			<li><NavLink to="/create_request" activeClassName="active_li"><div>New borrow request</div></NavLink></li>
+			<li><NavLink to="/dashboard/offers" activeClassName="active_li"><div>Dashboard</div></NavLink></li>
+			<li><NavLink to="/wallet" activeClassName="active_li"><div>Wallet</div></NavLink></li>
+			<li><NavLink to="/faucet" activeClassName="active_li"><div>Faucet</div></NavLink></li>
 		</ul>;
 
 		return(
@@ -51,7 +40,7 @@ class SideMenu extends React.Component{
           </button>
 				</div>
 				<div className="d-none d-lg-block pt-3">{list}</div>
-				<Collapse in={this.state.menu} className="list_menu" id="menu">
+				<Collapse in={this.state.menu} className="list_menu" id="menu" onClick={this.toggle}>
 					{list}
 				</Collapse>	
 			</div>
@@ -60,10 +49,4 @@ class SideMenu extends React.Component{
 
 }
 
-const mapStateToProps = (state) => {
-	return{
-		price: state.ticker
-	};
-};
-
-export default connect(mapStateToProps)(withRouter(SideMenu));
+export default SideMenu;
