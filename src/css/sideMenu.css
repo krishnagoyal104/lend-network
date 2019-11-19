@@ -42,6 +42,8 @@
 }
 
 #list li * {
+	width: 100%;
+	display: flex;
 	text-decoration: none;
 	color: white;
 }
