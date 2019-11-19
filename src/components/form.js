@@ -34,7 +34,8 @@ class Form extends React.Component {
 
 	approveTokens = async(_function) => {
 		try{
-			await this.props.dispatch(approve(toWei(this.state.amount)));
+			const _amount = this.state.amount * this.props.price * 4/3;
+			await this.props.dispatch(approve(toWei(_amount)));
 			this.onEnter('approve', true);
 			_function(5);
 		}
@@ -45,7 +46,10 @@ class Form extends React.Component {
 
 	submit = (value) => {
 		if(value === 'request'){
-			this.props.dispatch(createRequest(this.state));
+			let {amount} = this.state;
+			amount = amount * this.props.price * 4/3;
+			const data = {...this.state, amount};
+			this.props.dispatch(createRequest(data));
 		}
 		else{
 			this.props.dispatch(createOffer(this.state));

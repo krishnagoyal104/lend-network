@@ -14,7 +14,7 @@ const Overview = (props) => {
 						<span className="overview_values">Dai</span>
 					</div>
 					<div>
-						<span>{props.mode ? 'Loan Amount(Dai)' : 'Collateral Amount(Eth)'}</span>
+						<span>Loan Amount(Eth)</span>
 						<span className="overview_values">{props.amount}</span>
 					</div>
 					<div>

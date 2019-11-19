@@ -36,11 +36,16 @@ class Timeline extends React.Component {
 
     const {mode} = this.props;
 
+    const {eth, dai, allowance} = this.props.balance;
+    const _collateral = this.props.amount * this.props.price * 4/3;
+    const toApprove = toWei(_collateral || '0') - allowance;
+    const hasBalance = round(fromWei(dai), 2) > this.props.amount;
+
     const slider =
     <SliderWithTooltip
-      min={mode ? 25 : 0.1}
-      max={mode ? 5000 : 20}
-      step={mode ? 25 : 0.1}
+      min={0.1}
+      max={round(fromWei(eth), 2)}
+      step={0.1}
       trackStyle={{ backgroundColor: '#007ee5', height: 10 }}
       handleStyle={{
         borderColor: 'blue',
@@ -89,10 +94,6 @@ class Timeline extends React.Component {
       return containers;
     }
 
-    const {eth, dai, allowance} = this.props.balance;
-    const toApprove = toWei(this.props.amount || '0') - allowance;
-    const hasBalance = round(fromWei(dai), 2) > this.props.amount;
-
     return(
       <VerticalTimeline layout={'1-column'}>
         {this.state.display >= 1 &&
@@ -105,7 +106,7 @@ class Timeline extends React.Component {
               <p id="timeline_event_title">1. Chose collateral currency:</p>
               <span id="timeline_event_description">
                 {
-                  mode ? 'The maximux amount you can borrow will be 70% of the amount of collateral.' :
+                  mode ? 'Choose the currency you wish to pledge as collateral.' :
                   'Chose the currency you wish to receive as collateral.'
                 }
               </span>
@@ -131,14 +132,14 @@ class Timeline extends React.Component {
             <div>
               <p id="timeline_event_title">
                 {
-                  mode ? '2. Enter amount to pledge as collateral:' :
+                  mode ? '2. Enter the amount you wish to borrow.' :
                   '2. Enter the amount you wish to lend:'
                 }
               </p>
               <span id="timeline_event_description">
                 {
-                  mode ? 'The maximux amount you can borrow will be 70% of the amount of collateral.' :
-                  'Loan will be backed by collateral pledged by the borrower by an extra margin of 33% to act as safeguard.'
+                  mode ? 'The amount of collateral required will be 33% more than the amount of loan to protect the lender from volatility.' :
+                  'Loan will be backed by collateral pledged by the borrower by an extra margin of 33% to act as a safeguard against volatility.'
                 }
               </span>
             </div>
@@ -151,14 +152,12 @@ class Timeline extends React.Component {
                   {mode ? 'Enter collateral amount:' : 'Enter loan amount:'}
                 </p>
                 <input id="slider_input" type={'number'} value={this.props.amount} onChange={(e) => this.props.onEnter('amount', e.target.value)} />
-                <p>{mode ? '(in Dai)' : '(in Eth)'}</p>
+                <p>(in Eth)</p>
               </div>
               <div id="max_loan_container">
-                <p id="max_loan_text">{mode ? 'Max Loan Amount:' : 'Backed by collateral:'}</p>
+                <p id="max_loan_text">{mode ? 'Collateral required' : 'Backed by collateral:'}</p>
                 <p id="max_loan_amount">
-                  {mode ? `${round((this.props.amount * 3/4)/this.props.price, 3)} Eth` :
-                    `${round((this.props.amount * 4 * this.props.price)/3, 3)} Dai`
-                  }
+                  {round(_collateral, 3)} Dai
                 </p>
               </div>
             </div>
@@ -240,7 +239,7 @@ class Timeline extends React.Component {
               <div>
                 <div id="timeline_approve_container">
                   <span id="timeline_approve_text">Collateral Amount:</span>
-                  <span id="timeline_approve_amount">{this.props.amount} Dai</span>
+                  <span id="timeline_approve_amount">{_collateral} Dai</span>
                 </div>
                 <div id="timeline_approve_container">
                   <span id="timeline_approve_text">Approved:</span>
@@ -254,7 +253,7 @@ class Timeline extends React.Component {
               <div>
                 <div id="timeline_approve_container">
                   <span id="timeline_approve_text">Collateral Amount:</span>
-                  <span id="timeline_approve_amount">{this.props.amount} Dai</span>
+                  <span id="timeline_approve_amount">{_collateral} Dai</span>
                 </div>
                 <div id="timeline_approve_container">
                   <span id="timeline_approve_text">Your Dai Balance:</span>

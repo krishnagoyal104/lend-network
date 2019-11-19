@@ -83,11 +83,11 @@ const DashboardModal = (props) => {
             <span>{installments * 30} days</span>
             {status && <span>{installmentsPaid}</span>}
             {status && <span>{moment.unix(time).add(30, 'days').format('LL')}</span>}
-            {/*{status && <span>{round(fromWei(amountDue), 2)}</span>}*/}
+            {status && <span>{round(fromWei(amountDue), 2)}</span>}
           </div>
         </div>
         <div id="dashboard_modal_button_container">
-          {props.loading ? <Loader /> : <div id="dashboard_modal_button" style={{backgroundColor: !status && 'red'}}
+          {props.loading ? <Loader /> : <div id="dashboard_modal_button"
           onClick={status ? () => props.pay(amountDue) : props.mode ? props.cancelRequest : props.cancelOffer}>
             <span id="dashboard_modal_button_text">{status ? 'Pay installment' : props.mode ? 'Cancel Request' : 'Cancel Offer'}</span>
           </div>}
