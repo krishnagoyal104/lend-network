@@ -148,9 +148,7 @@ class Timeline extends React.Component {
                 {slider}
               </div>
               <div id="slider_input_container">
-                <p id="slider_input_text">
-                  {mode ? 'Enter collateral amount:' : 'Enter loan amount:'}
-                </p>
+                <p id="slider_input_text">Enter loan amount:</p>
                 <input id="slider_input" type={'number'} value={this.props.amount} onChange={(e) => this.props.onEnter('amount', e.target.value)} />
                 <p>(in Eth)</p>
               </div>
