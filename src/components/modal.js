@@ -1,7 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal';
-import {round, fromWei} from '../utils';
-import Button from './button';
 import Steps from './steps';
 
 const customStyles = {

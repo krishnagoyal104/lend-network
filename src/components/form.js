@@ -34,7 +34,7 @@ class Form extends React.Component {
 
 	approveTokens = async(_function) => {
 		try{
-			const _amount = this.state.amount * this.props.price * 4/3;
+			const _amount = (this.state.amount * this.props.price * 4)/3;
 			await this.props.dispatch(approve(toWei(_amount)));
 			this.onEnter('approve', true);
 			_function(5);

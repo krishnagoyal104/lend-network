@@ -106,14 +106,14 @@ class Timeline extends React.Component {
               <p id="timeline_event_title">1. Chose collateral currency:</p>
               <span id="timeline_event_description">
                 {
-                  mode ? 'Choose the currency you wish to pledge as collateral.' :
-                  'Chose the currency you wish to receive as collateral.'
+                  mode ? 'Choose the token you wish to pledge as collateral.' :
+                  'Chose the token you wish to receive as collateral.'
                 }
               </span>
             </div>
             <div id="currencies">
               <div id="currencies_sub_container">
-                <img className="timeline_event_img" src={require('../images/dai.svg')} />
+                <img className="timeline_event_img" src={require('../images/dai.svg')} alt="" />
                 <p>Dai</p>
               </div>
               <p>(Support for multiple currencies to be added soon.)</p>
@@ -138,8 +138,8 @@ class Timeline extends React.Component {
               </p>
               <span id="timeline_event_description">
                 {
-                  mode ? 'The amount of collateral required will be 33% more than the amount of loan to protect the lender from volatility.' :
-                  'Loan will be backed by collateral pledged by the borrower by an extra margin of 33% to act as a safeguard against volatility.'
+                  mode ? 'The amount of collateral required will be 33% more than the pricipal amount to protect the lender from volatility.' :
+                  'Loan will be backed by collateral pledged by the borrower with an extra margin of 33% to act as a safeguard against volatility.'
                 }
               </span>
             </div>
@@ -155,9 +155,9 @@ class Timeline extends React.Component {
                 <p>(in Eth)</p>
               </div>
               <div id="max_loan_container">
-                <p id="max_loan_text">{mode ? 'Collateral required' : 'Backed by collateral:'}</p>
+                <p id="max_loan_text">{mode ? 'Collateral required:' : 'Backed by collateral:'}</p>
                 <p id="max_loan_amount">
-                  {round(_collateral, 3)} Dai
+                  {round(_collateral, 2)} Dai
                 </p>
               </div>
             </div>
@@ -239,7 +239,7 @@ class Timeline extends React.Component {
               <div>
                 <div id="timeline_approve_container">
                   <span id="timeline_approve_text">Collateral Amount:</span>
-                  <span id="timeline_approve_amount">{_collateral} Dai</span>
+                  <span id="timeline_approve_amount">{round(_collateral, 2)} Dai</span>
                 </div>
                 <div id="timeline_approve_container">
                   <span id="timeline_approve_text">Approved:</span>
@@ -261,7 +261,7 @@ class Timeline extends React.Component {
                 </div>
               </div>
             }
-            {this.props.approve ? <img id="check_mark_image" src={require('../images/check-mark.svg')} /> :
+            {this.props.approve ? <img id="check_mark_image" src={require('../images/check-mark.svg')} alt="" /> :
               this.props.loading ? <Loader /> :
               <Button className="timeline_event_button" disabled={!hasBalance} size="large" onClick={() => {
                 toApprove > 0 ? this.props.approveTokens(this.onChangeDisplay) : this.onChangeDisplay(5);
@@ -294,7 +294,7 @@ class Timeline extends React.Component {
                 </ul> :
                 <ul id="timeline_submit_pointers">
                   <li>Once you submit, your offer will be visible to others who may chose to borrow from you.</li>
-                  <li>Installments(along with interest) will be receivable every 30 days.</li>
+                  <li>Installments(along with interest) will become receivable every 30 days.</li>
                   <li>Collateral can be claimed in case of default by the borrower.</li>
                   <li>Only the outstanding loan amount can be claimed as collateral.</li>
                 </ul>

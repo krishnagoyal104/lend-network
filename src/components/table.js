@@ -62,7 +62,9 @@ const columns = (address) => {
           case 'Defauted':
             return 'red';
           case 'Settled':
-            return 'green';        
+            return 'green'; 
+          default:
+            return 'green';         
         }
       }
       return(

@@ -33,7 +33,7 @@ class SideMenu extends React.Component{
 		return(
 			<div id="sidemenu">
 				<div className="navbar-dark d-flex justify-content-between justify-content-lg-center align-items-center px-4 px-lg-0 h-custom-100" id="logo_container">
-					<img id="logo" src={require('../images/logo.png')} />
+					<img id="logo" src={require('../images/logo.png')} alt="" />
 					<span id="name">Lend Network</span>
 					<button onClick={this.toggle} id="toggle" className="d-lg-none" aria-controls="collapsible"
 					aria-expanded={this.state.menu}>

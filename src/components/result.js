@@ -24,8 +24,6 @@ const customStyles = {
 
 const ResultModal = (props) => {
 
-  const path = props.location.pathname;
-
 	return(
 		<Modal
       id="modal"

@@ -3,7 +3,6 @@ import {Tag} from 'antd';
 import Modal from 'react-modal';
 import moment from 'moment';
 import {round, fromWei} from '../utils';
-import Button from './button';
 import Loader from './loader';
 
 const customStyles = {
@@ -34,7 +33,9 @@ const color = (state) => {
     case 'Defauted':
       return 'red';
     case 'Settled':
-      return 'green';        
+      return 'green';
+    default:
+      return 'green';         
   }
 }
 
@@ -47,7 +48,6 @@ const DashboardModal = (props) => {
   loanAmount = round(fromWei(loanAmount), 2);
   collateralAmount = round(fromWei(collateralAmount), 2);
   const status = state === 'Accepted';
-  console.log('fsdfsdf', amountDue, pricipleDue, interestDue);
 
 	return(
 		<Modal
@@ -63,8 +63,8 @@ const DashboardModal = (props) => {
         <div id="dashboard_modal_body">
           <div id="dashboard_modal_keys_container">
             <span>Status</span>
-            <span>Amount borrowed</span>
-            <span>Collateral pledged</span>
+            <span>{props.mode ? 'Amount borrowed' : 'Amount lent'}</span>
+            <span>{props.mode ? 'Collateral pledged' : 'Backed by'}</span>
             <span>Interest</span>
             <span>Total installments</span>
             <span>Duration</span>
@@ -83,12 +83,12 @@ const DashboardModal = (props) => {
             <span>{installments * 30} days</span>
             {status && <span>{installmentsPaid}</span>}
             {status && <span>{moment.unix(time).add(30, 'days').format('LL')}</span>}
-            {status && <span>{round(fromWei(amountDue), 2)}</span>}
+            {status && <span>{round(fromWei(amountDue), 2)} Dai</span>}
           </div>
         </div>
         <div id="dashboard_modal_button_container">
           {props.loading ? <Loader /> : <div id="dashboard_modal_button"
-          onClick={status ? () => props.pay(amountDue) : props.mode ? props.cancelRequest : props.cancelOffer}>
+          onClick={status ? () => props.pay(amountDue) : (props.mode ? props.cancelRequest : props.cancelOffer)}>
             <span id="dashboard_modal_button_text">{status ? 'Pay installment' : props.mode ? 'Cancel Request' : 'Cancel Offer'}</span>
           </div>}
         </div>

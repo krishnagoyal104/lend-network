@@ -5,8 +5,8 @@ import {round, fromWei} from '../utils';
 
 const Card = (props) => {
 	
-	const {request, price} = props;
-	let {id, loanAmount, collateralAmount, installments, interest} = request;
+	const {request} = props;
+	let {loanAmount, collateralAmount, installments, interest} = request;
 	loanAmount = round(fromWei(loanAmount), 2);
 	collateralAmount = round(fromWei(collateralAmount), 2);
 
@@ -14,12 +14,12 @@ const Card = (props) => {
 		<div id="card">
 			<div id="card_partition_top">
 				<div id="card_partition_top_left">
-					<img className="card_pic" src={require('../images/ethereum.svg')} />
+					<img className="card_pic" src={require('../images/ethereum.svg')} alt="" />
 					<span>Eth</span>
 					<span>{loanAmount}</span>
 				</div>
 				<div id="card_partition_top_right">
-					<img className="card_pic" src={require('../images/dai.svg')} />
+					<img className="card_pic" src={require('../images/dai.svg')} alt="" />
 					<span>Dai</span>
 					<span>{collateralAmount}</span>
 				</div>

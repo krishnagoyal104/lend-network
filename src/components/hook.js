@@ -1,6 +1,6 @@
 import React from 'react';
 import {useQuery} from '@apollo/react-hooks';
-import {query_offers, query_requests, query_user_requests, query_user_offers} from '../graphql/config';
+import {query_all, query_offers, query_requests, query_user_requests, query_user_offers} from '../graphql/config';
 import Loader from './loader';
 import ErrorView from './error';
 import {toChecksum} from '../utils';
@@ -17,6 +17,8 @@ const Hook = (Component) => {
 					return query_user_offers;
 				case '/dashboard/requests':
 					return query_user_requests;
+				default:
+					return query_all;	
 			}
 		};
 

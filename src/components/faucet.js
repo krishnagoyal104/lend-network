@@ -25,7 +25,7 @@ class Faucet extends React.Component {
 			<div id="faucet">
 				<div id="faucet_info_container">
 					<p id="faucet_info">
-						Fund your account with free Dai tokens on Rinkeby Testnet by submitting a request to the faucet.<br/>
+						Fund your account with free Dai tokens on Rinkeby Testnet.<br/>
 						Your balance will be updated within a few seconds.
 					</p>
 				</div>

@@ -84,7 +84,7 @@ export const approveTokens = (account, amount) => {
 	amount = amount.toString();
 	const promise = new Promise(async(resolve, reject) => {
 		try{
-			const result = await tokenContract.methods.approve(ETHLEND_CONTRACT_ADDRESS, amount).send({from: account});
+			await tokenContract.methods.approve(ETHLEND_CONTRACT_ADDRESS, amount).send({from: account});
 			resolve();
 		}
 		catch(e){
@@ -240,11 +240,21 @@ export const getDaiBalance = (account) => {
 }
 
 export const fromWei = (amount) => {
-	return Web3.utils.fromWei(amount.toString());
+	try{
+		return Web3.utils.fromWei(amount.toString());
+	}
+	catch(e){
+		console.log(e);
+	}
 }
 
 export const toWei = (amount) => {
-	return Web3.utils.toWei(amount.toString());
+	try{
+		return Web3.utils.toWei(amount.toString());
+	}
+	catch(e){
+		console.log(e);
+	}
 }
 
 export const toChecksum = (address) => {
