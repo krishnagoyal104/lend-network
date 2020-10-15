@@ -85,6 +85,10 @@ class Dashboard extends React.Component {
     //this.props.dispatch(payInstallment(_id, amount));
   }
 
+  claimCollateral = () => {
+    message.error('Cannot claim collateral as the borrower has not defaulted.')
+  }
+
   render(){
 
     return(
@@ -104,7 +108,8 @@ class Dashboard extends React.Component {
           <Table data={this.props.data} openModal={this.openModal} account={this.props.account} />
           {this.state.index !== null && <Modal isOpen={this.state.modal} closeModal={this.closeModal}
           mode={this.mode === 'requests'} loading={this.props.loading} data={this.props.data[this.state.index]}
-          cancelOffer={this.cancelLoanOffer} cancelRequest={this.cancelLoanRequest} pay={this.payInstallment} />}
+          cancelOffer={this.cancelLoanOffer} cancelRequest={this.cancelLoanRequest} pay={this.payInstallment}
+          claimCollateral={this.claimCollateral} />}
         </div>
       </div>
     );

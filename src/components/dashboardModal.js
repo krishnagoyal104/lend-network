@@ -88,8 +88,8 @@ const DashboardModal = (props) => {
         </div>
         <div id="dashboard_modal_button_container">
           {props.loading ? <Loader /> : <div id="dashboard_modal_button"
-          onClick={status ? () => props.pay(amountDue) : (props.mode ? props.cancelRequest : props.cancelOffer)}>
-            <span id="dashboard_modal_button_text">{status ? 'Pay installment' : props.mode ? 'Cancel Request' : 'Cancel Offer'}</span>
+          onClick={status ? (props.mode ? () => props.pay(amountDue) : () => props.claimCollateral()) : (props.mode ? props.cancelRequest : props.cancelOffer)}>
+            <span id="dashboard_modal_button_text">{status ? (props.mode ? 'Pay installment' : 'Claim Collateral') : (props.mode ? 'Cancel Request' : 'Cancel Offer')}</span>
           </div>}
         </div>
     	</div>

@@ -35,6 +35,7 @@ const appPackageJson = require(paths.appPackageJson);
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -506,6 +507,7 @@ module.exports = function(webpackEnv) {
       /*-- Custom Plugins --*/
 
       new MomentLocalesPlugin(),
+      isEnvProduction && new CompressionPlugin(),
 
       /*-- --*/
       
