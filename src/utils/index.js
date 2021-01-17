@@ -239,6 +239,20 @@ export const getDaiBalance = (account) => {
 	return promise;
 }
 
+export const updateEthPrice = (account) => {
+	const promise = new Promise(async(resolve, reject) => {
+		const weiAmount = toWei('0.1');
+		try{
+			await contract.methods.getApi().send({from: account, value: weiAmount});
+			resolve();
+		}
+		catch(e){
+			reject(e);
+		}
+	});
+	return promise;
+}
+
 export const fromWei = (amount) => {
 	try{
 		return Web3.utils.fromWei(amount.toString());
