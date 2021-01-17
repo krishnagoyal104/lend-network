@@ -30,7 +30,7 @@ class Faucet extends React.Component {
 					</p>
 				</div>
 				<div id="faucet_container">
-					<img id="faucet_image" src={require('../images/dai.svg')} alt="" />
+					<img id="faucet_image" src="/images/dai.svg" alt="" />
 					<p>Dai</p>
 					<div id="faucet_balance_container">
 						<span>Balance:</span>

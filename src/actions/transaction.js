@@ -19,7 +19,7 @@ const openNotification = () => {
     	duration: '10',
       message: <span style={{fontSize: '20px'}}>Transaction Initiated</span>,
       description: <span style={{fontSize: '18px'}}>Please accept the transaction using metamask.</span>,
-      icon: <img src={require('../images/metamask.png')} style={{height: '30px', width: '30px'}} alt="" />,
+      icon: <img src="/images/metamask.png" style={{height: '30px', width: '30px'}} alt="" />,
     });
   };
 

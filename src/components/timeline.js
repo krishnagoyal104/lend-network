@@ -113,7 +113,7 @@ class Timeline extends React.Component {
             </div>
             <div id="currencies">
               <div id="currencies_sub_container">
-                <img className="timeline_event_img" src={require('../images/dai.svg')} alt="" />
+                <img className="timeline_event_img" src="/images/dai.svg" alt="" />
                 <p>Dai</p>
               </div>
               <p>(Support for multiple currencies to be added soon.)</p>
@@ -259,7 +259,7 @@ class Timeline extends React.Component {
                 </div>
               </div>
             }
-            {this.props.approve ? <img id="check_mark_image" src={require('../images/check-mark.svg')} alt="" /> :
+            {this.props.approve ? <img id="check_mark_image" src="/images/check-mark.svg" alt="" /> :
               this.props.loading ? <Loader /> :
               <Button className="timeline_event_button" disabled={!hasBalance} size="large" onClick={() => {
                 toApprove > 0 ? this.props.approveTokens(this.onChangeDisplay) : this.onChangeDisplay(5);
@@ -270,7 +270,7 @@ class Timeline extends React.Component {
             }
             {
               !hasBalance &&
-              <p id="steps_info">You dont't have enough dai. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>
+              <p id="steps_info">You don't have enough dai. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>
             }
           </div>
         </VerticalTimelineElement>}

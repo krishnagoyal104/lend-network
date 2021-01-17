@@ -141,7 +141,7 @@ class StepsView extends React.Component {
               }
             </div>
             {!mode && toApprove > 0 && <p id="steps_info">*Approve dai to our contract as collateral to proceed.</p>}
-            {!mode && !hasBalance && <p id="steps_info">You dont't have enough dai. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>}
+            {!mode && !hasBalance && <p id="steps_info">You don't have enough dai. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>}
             {mode && ethRequired > 0 && <p id="steps_info">Your account does not have sufficient ether. You can request some from the <span className="steps_link" onClick={this.props.navigate}>faucet</span>.</p>}
           </div>
           }
